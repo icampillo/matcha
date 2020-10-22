@@ -79,11 +79,11 @@ class UserVisitList extends Component {
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <Card className={classes.card}>
-              <CardMedia
+              { this.state.pic1 !== null ? <CardMedia
                 className={classes.cardMedia}
                 image={this.state.pic1}
                 title="Image title"
-              />
+              /> : 0}
               <CardContent className={classes.cardContent}>
                 <Typography gutterBottom variant="h5" component="h2">
                   {this.state.username}
