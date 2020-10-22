@@ -108,7 +108,7 @@ class UserList extends Component {
                             }
                             <CardContent className={classes.cardContent}>
                                 <Typography gutterBottom variant="h5" component="h2">
-                                    {user.firstname} {user.lastname}
+                                    {user.username}
                                 </Typography>
                                 <Typography>
                                     {user.age} ans
@@ -117,7 +117,7 @@ class UserList extends Component {
                             <CardActions >
                                 <Link
                                     to={{
-                                        pathname: `/Profile/${user.firstname}`,
+                                        pathname: `/Profile/${user.username}`,
                                         aboutProps: {
                                             user: user
                                         }
@@ -125,7 +125,7 @@ class UserList extends Component {
                                 </Link>
                                 <Link
                                     to={{
-                                        pathname: `/Chat/${user.firstname}`,
+                                        pathname: `/Chat/${user.username}`,
                                         aboutProps: {
                                             user: user
                                         }

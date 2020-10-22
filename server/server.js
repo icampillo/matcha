@@ -64,6 +64,8 @@ io.on('connection', socket => {
             me: user.username,
             to: user.to
           }
+          let tmp = { liked: user.username }
+          io.sockets.emit('newNotif', tmp)
           connection.query('INSERT INTO notif SET username = ?, sender = ?, notification = "nouveau message", readed = 0, date = ?', [newMessage.to, newMessage.me, today], (err, result) => {
             if (err) console.log(err)
             io.sockets.emit('receiveMessage', newMessage)

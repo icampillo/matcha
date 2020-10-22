@@ -157,6 +157,7 @@ class Profile extends Component {
       updateMdpEmail: '',
       updateProfile: '',
       errorTags: '',
+      save: [],
       noToken: false
     }
     this.onChange = this.onChange.bind(this)
@@ -248,7 +249,7 @@ class Profile extends Component {
         longitude: decoded.lon,
         adressUser: decoded.adressUser,
         showAlgo: decoded.city ? true : false,
-        save: JSON.parse(decoded.interests),
+        save: decoded.interests ? JSON.parse(decoded.interests) : [],
       })
     }
     else {
@@ -331,23 +332,23 @@ class Profile extends Component {
       const [tags, setTags] = React.useState(props.tags);
       const removeTags = indexToRemove => {
         setTags([...tags.filter((_, index) => index !== indexToRemove)]);
-        tmp = this.state.save;
-        tmp2 = tmp.filter((_, index) => index !== indexToRemove)
-        this.setState({ tags: tmp2, save: tmp2 });
+        if (this.state.save.length > 0) {
+          tmp = this.state.save;
+          tmp2 = tmp.filter((_, index) => index !== indexToRemove)
+          this.setState({ tags: tmp2, save: tmp2 });
+        }
       };
       const addTags = event => {
-        if (event.target.value.length > 15) {
-          this.setState({ errorTags: "Nombre de caractères 15" })
-        }
-        else if (event.target.value !== "") {
+        if (event.target.value !== "") {
           setTags([...tags, event.target.value]);
           props.selectedTags([...tags, event.target.value]);
+          console.log("THIS.STATE = ", this.state.save)
+          tmp = this.state.save;
           tmp.push(event.target.value)
           this.setState({ tags: tmp, save: tmp })
           event.target.value = "";
           this.setState({ errorTags: "" })
         }
-
       };
       return (
         <div className="tags-input">

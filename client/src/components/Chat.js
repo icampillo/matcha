@@ -47,7 +47,6 @@ class Chat extends Component {
                 to: currentUser
             }
             socket.emit('join', userData);
-            
             socket.on('receiveMessage', function (newMessage) {
                 if (newMessage) {
                     if (newMessage.me !== this.state.username) {
@@ -64,6 +63,18 @@ class Chat extends Component {
     }
 
     componentWillUnmount() {
+        this.setState({ 
+            firstName: '',
+            username: '',
+            message: '',
+            messages: [],
+            value: '',
+            count: 25,
+            stop: false,
+            errors: {},
+            currentUser: null,
+            noToken: false
+         })
     }
 
     listener() {
@@ -94,8 +105,8 @@ class Chat extends Component {
         }
     }
     render() {
-
         this.listener()
+        console.log("this.state = ", this.state)
         return (
             <div>
                 <Navbar />
