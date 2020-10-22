@@ -67,6 +67,7 @@ class NotificationsList extends Component {
         }
         getNotifications(user).then(res => {
             if (res) {
+                console.log(res)
                 this.setState({
                     notifs: res,
                 })
@@ -117,7 +118,7 @@ class NotificationsList extends Component {
                                 <TableRow key={notif.id}>
                                     <TableCell>{notif.date}</TableCell>
                                     <TableCell>{notif.sender}</TableCell>
-                                    <TableCell>Cet utilisateur à {notif.notification} ton profil</TableCell>
+                                    {notif.notification === "liker" || notif.notification === "visiter" ? <TableCell>Cet utilisateur à {notif.notification} ton profil</TableCell> :<TableCell>{notif.notification}</TableCell>}
                                     <TableCell><Link
                                         to={{
                                             pathname: `/ProfileNotif/${notif.username}`,
