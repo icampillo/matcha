@@ -342,7 +342,6 @@ class Profile extends Component {
         if (event.target.value !== "") {
           setTags([...tags, event.target.value]);
           props.selectedTags([...tags, event.target.value]);
-          console.log("THIS.STATE = ", this.state.save)
           tmp = this.state.save;
           tmp.push(event.target.value)
           this.setState({ tags: tmp, save: tmp })
@@ -578,7 +577,6 @@ class Profile extends Component {
     let $displayTag2 = null;
 
     const selectedTags = tags => {
-      console.log(tags)
     };
 
     if (this.state.pic1 !== "") {

@@ -67,7 +67,6 @@ class NotificationsList extends Component {
         }
         getNotifications(user).then(res => {
             if (res) {
-                console.log(res)
                 this.setState({
                     notifs: res,
                 })
