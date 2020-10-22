@@ -786,7 +786,7 @@ router.post('/emailresetsent', (req, res) => {
     }
     if (req.body.email) {
         connection.query('SELECT * FROM users WHERE email = ?', [userData.email], (err, rows, result) => {
-            if (err) console.log("route reset err", err)
+            if (err) console.log(err)
             if (rows[0] !== [] && rows[0] !== undefined && rows !== undefined && rows.length > 0) {
                 sendEmail(req.body.type, req.body.email, rows[0].hash)
                 return res.status(200).send({ message: "email envoyé" });
@@ -801,7 +801,7 @@ router.post('/emailresetsent', (req, res) => {
 router.get('/redirectPassword/:hash', (req, res) => {
     if (req.params.hash) {
         connection.query('SELECT * FROM users WHERE hash = ?', [req.params.hash], (err, rows, result) => {
-            if (err) console.log("route reset err", err)
+            if (err) console.log(err)
             if (rows[0] !== [] && rows[0] !== undefined && rows !== undefined && rows.length > 0) {
                 return res.redirect('http://localhost:3000/resetPassword/' + req.params.hash);
             }
