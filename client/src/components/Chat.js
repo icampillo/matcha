@@ -106,7 +106,6 @@ class Chat extends Component {
     }
     render() {
         this.listener()
-        console.log("this.state = ", this.state)
         return (
             <div>
                 <Navbar />
