@@ -87,7 +87,7 @@ io.on('connection', socket => {
       if (rows !== [] && rows !== undefined && rows.length > 0) {
         connection.query('SELECT * FROM block WHERE username = ? AND blocked = ?', [user.liked, user.username], (err, rows, result) => {
           if (rows.length === 0) {
-            connection.query('INSERT INTO notif SET username = ?, sender = ?, notification = "Matché ne vous like plus", readed = 0, date = ?', [userData.unliked, userData.username, today], (err, result) => {
+            connection.query('INSERT INTO notif SET username = ?, sender = ?, notification = "Cet utilisateur ne vous like plus", readed = 0, date = ?', [userData.unliked, userData.username, today], (err, result) => {
               if (err) console.log(err)
             })
           }
@@ -119,7 +119,7 @@ io.on('connection', socket => {
       if (!err) {
         connection.query('SELECT * FROM likes WHERE username = ? AND liked = ?', [userData.liked, userData.username], (err, rows, result) => {
           if (rows !== [] && rows !== undefined && rows.length > 0) {
-            connection.query('INSERT INTO notif SET username = ?, sender = ?, notification = "Utilisateur vous like aussi !", readed = 0, date = ?', [userData.liked, userData.username, date], (err, result) => {
+            connection.query('INSERT INTO notif SET username = ?, sender = ?, notification = "Cet utilisateur vous like aussi !", readed = 0, date = ?', [userData.liked, userData.username, today], (err, result) => {
               let tmp = userData.scorePop + 30;
               connection.query('UPDATE users SET scorePop = ? WHERE username = ?', [tmp, userData.liked], (err, results) => {
                 if (err) console.log(err)
@@ -129,7 +129,7 @@ io.on('connection', socket => {
             });
           }
           else {
-            connection.query('INSERT INTO notif SET username = ?, sender = ?, notification = "liker", readed = 0, date = ?', [userData.liked, userData.username, date], (err, result) => {
+            connection.query('INSERT INTO notif SET username = ?, sender = ?, notification = "liker", readed = 0, date = ?', [userData.liked, userData.username, today], (err, result) => {
               let tmp = userData.scorePop + 30;
               connection.query('UPDATE users SET scorePop = ? WHERE username = ?', [tmp, userData.liked], (err, results) => {
                 if (err) console.log(err)
