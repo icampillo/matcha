@@ -117,7 +117,7 @@ class NotificationsList extends Component {
                                 <TableRow key={notif.id}>
                                     <TableCell>{notif.date}</TableCell>
                                     <TableCell>{notif.sender}</TableCell>
-                                    <TableCell>{notif.notification} ton profil</TableCell>
+                                    <TableCell>Cet utilisateur à {notif.notification} ton profil</TableCell>
                                     <TableCell><Link
                                         to={{
                                             pathname: `/ProfileNotif/${notif.username}`,
