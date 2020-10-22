@@ -43,6 +43,9 @@ const styles = theme => ({
     },
     reglages: {
         width: "300px",
+    },
+    buttonRecherche: {
+        textAlign: 'center',
     }
 });
 
@@ -401,7 +404,7 @@ class UserList extends Component {
     render() {
         const selectedTags = tags => {
         };
-        let $displayTag = (<Grid item xs={12} sm={8}>
+        let $displayTag = (<Grid item xs={12} sm={6} >
             <this.TagsInput selectedTags={selectedTags} tags={["exemple"]} />
         </Grid>);
 
@@ -562,16 +565,17 @@ class UserList extends Component {
                                             </div>
                                         </Grid>
                                         {$displayTag}
-                                        <form noValidate onSubmit={this.onSubmit}>
-                                            <Grid item xs={12} sm={4}>
+                                            <Grid item xs={12} sm={6}>
+                                        <form noValidate className={classes.buttonRecherche} onSubmit={this.onSubmit}>
+                                        
                                                 <Button
                                                     type="submit"
                                                     variant="contained"
                                                     color="secondary"
                                                     className={classes.save}>Recherche
-                            </Button>
-                                            </Grid>
+                                                </Button>
                                         </form>
+                                            </Grid>
                                     </Grid>
                                     <Grid container spacing={4}>
                                         <Grid item xs={12} sm={4}>

@@ -192,7 +192,7 @@ class blockedList extends Component {
             </Grid>);
         }
         else {
-            $userList = (<div>No users BLOCKED</div>)
+            $userList = (<div>Pas d'utilisateurs blockés.</div>)
         }
         return (
             <div className={classes.container}>
