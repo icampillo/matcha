@@ -41,9 +41,11 @@ class NotificationsList extends Component {
         this._isMounted = true;
         const token = localStorage.usertoken
         const decoded = jwt_decode(token)
-        this.setState({
-            email: decoded.email,
-        })
+        if (this._isMounted) {
+            this.setState({
+                email: decoded.email,
+            })
+        }
         const user = {
             username: decoded.username,
         }

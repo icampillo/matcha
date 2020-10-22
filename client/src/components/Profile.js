@@ -592,13 +592,18 @@ class Profile extends Component {
     if (imagePreviewUrl) {
       $imagePreview = (<img width="35%" src={imagePreviewUrl} alt="" />);
     }
-    if (this.state.interests !== null && this.state.interests !== undefined) {
+    if (this.state.interests !== null && this.state.interests !== undefined && this.state.interests !== "[]") {
       if (this.state.interests.length > 4) {
         let tagsTab = JSON.parse(this.state.interests);
         $displayTag = (<Grid item xs={12} >
           <this.TagsInput selectedTags={selectedTags} tags={tagsTab} />
         </Grid>);
       }
+    }
+    else if (this.state.tags.length === 0){
+      $displayTag2 = (<Grid item xs={12} >
+        <this.TagsInput selectedTags={selectedTags} tags={["exemple"]} />
+      </Grid>);
     }
     else {
       $displayTag2 = (<Grid item xs={12} >

@@ -264,7 +264,7 @@ class ProfileUser extends Component {
       profil = (
         <div>
           <Typography variant="h6" gutterBottom>
-            Profil de {this.state.currentUser.firstname}
+            Profil de {this.state.currentUser.username}
           </Typography>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
