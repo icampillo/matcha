@@ -6,7 +6,15 @@ matcher un autre utilisateur ayant un profil plus ou moins correspondant, parmi 
 selection de profils d’autres utilisateurs que votre site proposera.
 Une fois qu’ils se sont réciproquement matchés, ces deux profils devront pouvoir s’échanger des mots doux et plus si affinités via un chat privé que vous aurez conçu.
 
-#LoginPage
+# LoginPage
 
 ![Screenshot](https://github.com/icampillo/matcha/blob/main/images/loginPage.PNG)
+
+# ProfilPage
+
+![Screenshot](https://github.com/icampillo/matcha/blob/main/images/Capture2.PNG)
+
+# SearchProfilPage
+
+![Screenshot](https://github.com/icampillo/matcha/blob/main/images/searchPage.PNG)
 
