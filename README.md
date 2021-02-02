@@ -53,7 +53,7 @@ Chat et notification en temps reel.
 
 ![Screenshot](https://github.com/icampillo/matcha/blob/main/images/chat.PNG)
 
-# notificationPage realtime
+# notificationPage
 
 ![Screenshot](https://github.com/icampillo/matcha/blob/main/images/notif.PNG)
 
