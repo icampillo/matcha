@@ -1,5 +1,18 @@
 # Matcha
 
+## install
+
+git clone https://github.com/icampillo/matcha.git
+
+cd server/ && npm install 
+cd client/ && npm install 
+
+### Mysql
+
+cd server/database && node setup.js
+cd server/database && node seed.js
+
+and now you can run it with npm start
 
 # Subject 
 
