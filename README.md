@@ -17,13 +17,10 @@ Une fois qu’ils se sont réciproquement matchés, ces deux profils devront pou
 * Express (+ middleware)
 * Node.js
 * JavaScript ES6+
-* PostgreSQL
+* Mysql
 * Webpack
-* SCSS (w/ BEM methodology)
-* OAuth
+* Cors
 * Socket.io  
-
-
 
 # LoginPage
 
