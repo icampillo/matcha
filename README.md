@@ -7,3 +7,6 @@ selection de profils d’autres utilisateurs que votre site proposera.
 Une fois qu’ils se sont réciproquement matchés, ces deux profils devront pouvoir s’échanger des mots doux et plus si affinités via un chat privé que vous aurez conçu.
 
 #LoginPage
+
+![Screenshot](Capture2.png)
+
