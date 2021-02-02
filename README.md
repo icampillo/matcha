@@ -8,6 +8,5 @@ Une fois qu’ils se sont réciproquement matchés, ces deux profils devront pou
 
 #LoginPage
 
-![Screenshot](Capture2.png)
+![Screenshot](https://github.com/icampillo/matcha/blob/main/images/loginPage.PNG)
 
-https://github.com/icampillo/matcha/blob/main/images/loginPage.PNG
