@@ -4,7 +4,8 @@
 
 git clone https://github.com/icampillo/matcha.git
 
-cd server/ && npm install 
+cd server/ && npm install
+
 cd client/ && npm install 
 
 ### Mysql
